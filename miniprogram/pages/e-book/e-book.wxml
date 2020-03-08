@@ -1,0 +1,30 @@
+<!--pages/e-book/e-book.wxml-->
+
+
+<view class="add-wrap" hover-class="plus-hover">
+  <image style="width: {{ imageWidth }}px;  height:{{ imageHeight }}px; background-color: #eeeeee;" mode="aspectFit" src="{{src}}"></image>
+</view>
+<swiper>
+  <view ></view>
+</swiper>
+<view class="arrow" bindtap="add" wx:if="{{ !isend }}"></view>
+<view class="left_arrow" bindtap="sub" wx:if="{{ !isbegin }}"></view>
+
+<view class="icon_input">
+<input confirm-type="done" bindconfirm="over" placeholder="记录笔记"  type='text'  placeholder-style="myclass" />
+<van-cell-group>
+  <van-field
+    center
+    clearable
+    label="记录"
+    placeholder="输入"
+    border="{{ false }}"
+    bind:change="onchange"
+  >
+    <van-button bind:click="startbut" slot="button" size="small" type="primary">保存</van-button>
+    <van-icon name= />
+  </van-field>
+</van-cell-group>
+<van-icon name="photograph" info="图"  bind:click="pho"/>
+</view>
+
